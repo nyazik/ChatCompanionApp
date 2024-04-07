@@ -23,7 +23,7 @@ final class APIClientTests: XCTestCase {
         mockSession = nil
         super.tearDown()
     }
-
+    
     func testFetchMessagesSuccess() {
         let mockMessagesJSON = """
             [
@@ -81,6 +81,64 @@ final class APIClientTests: XCTestCase {
             XCTAssertNil(responseError)
             XCTAssertNotNil(responseUser)
             XCTAssertEqual(responseUser?.id, "user123")
+        }
+    }
+    
+    func testLoginSuccess() {
+        let loginSuccessJSON = """
+        {
+            "success": true,
+            "message": "Login successful"
+        }
+        """.data(using: .utf8)!
+        
+        mockSession.nextData = loginSuccessJSON
+        mockSession.nextResponse = HTTPURLResponse(url: APIEndpoints.login, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let expectation = self.expectation(description: "LoginSuccess")
+        var responseError: Error?
+        var loginSuccessResponse: GenericAPIResponse?
+        
+        sut.login(username: "testUser", password: "testPass") { result in
+            switch result {
+            case .success(let response):
+                loginSuccessResponse = response
+            case .failure(let error):
+                responseError = error
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0) { _ in
+            XCTAssertNil(responseError)
+            XCTAssertNotNil(loginSuccessResponse)
+            XCTAssertTrue(loginSuccessResponse?.success == true)
+            XCTAssertEqual(loginSuccessResponse?.message, "Login successful")
+        }
+    }
+    
+    func testLoginFailure() {
+        mockSession.nextData = nil
+        mockSession.nextResponse = HTTPURLResponse(url: APIEndpoints.login, statusCode: 401, httpVersion: nil, headerFields: nil)
+        mockSession.nextError = NSError(domain: "com.ChatCompanionTests", code: 401, userInfo: [NSLocalizedDescriptionKey: "Unauthorized"])
+        
+        let expectation = self.expectation(description: "LoginFailure")
+        var responseError: Error?
+        var loginSuccessResponse: GenericAPIResponse?
+        
+        sut.login(username: "wrongUser", password: "wrongPass") { result in
+            switch result {
+            case .success(let response):
+                loginSuccessResponse = response
+            case .failure(let error):
+                responseError = error
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0) { _ in
+            XCTAssertNotNil(responseError)
+            XCTAssertNil(loginSuccessResponse)
         }
     }
 }

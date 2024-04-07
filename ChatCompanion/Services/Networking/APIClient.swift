@@ -67,7 +67,6 @@ class APIClient {
         var request = URLRequest(url: APIEndpoints.sendMessage)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        // Add authorization header if needed.
         
         do {
             let encoder = JSONEncoder()
@@ -80,7 +79,26 @@ class APIClient {
         
         performRequest(with: request, completion: completion)
     }
+    
+    func login(username: String, password: String, completion: @escaping (Result<GenericAPIResponse, Error>) -> Void) {
+        var request = URLRequest(url: APIEndpoints.login)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let loginDetails = ["username": username, "password": password]
+        
+        do {
+            let loginData = try JSONEncoder().encode(loginDetails)
+            request.httpBody = loginData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+        
+        performRequest(with: request, completion: completion)
+    }
 }
+
 
 struct GenericAPIResponse: Decodable {
     let success: Bool

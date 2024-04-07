@@ -24,4 +24,8 @@ struct APIEndpoints {
     static var fetchUsers: URL {
         return URL(string: "\(baseURL)api/users")!
     }
+    
+    static var login: URL {
+        return URL(string: "\(baseURL)login")!
+    }
 }

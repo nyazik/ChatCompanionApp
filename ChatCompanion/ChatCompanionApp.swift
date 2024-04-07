@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct ChatCompanionApp: App {
+    @StateObject var viewModel = UserViewModel()
+    let networkMonitor = NetworkMonitor()
+    
+    init() {
+        networkMonitor.startMonitoring()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            if viewModel.isAuthenticated {
+                ChatView(viewModel: ChatViewModel())
+            } else {
+                LoginView(viewModel: LoginViewModel())
+            }
         }
     }
 }

@@ -39,16 +39,12 @@ class ChatViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let genericResponse):
-                    // Check the success field in the GenericAPIResponse
                     if genericResponse.success {
                         self?.messages.append(newMessage)
                         self?.newMessageText = ""
                     } else {
-                        // If success is false, handle accordingly, e.g., show an alert to the user
-                        // You can use the message from the GenericAPIResponse for more information
                     }
                 case .failure(let error):
-                    // Handle the error, e.g., show an alert to the user
                     print(error.localizedDescription)
                 }
             }

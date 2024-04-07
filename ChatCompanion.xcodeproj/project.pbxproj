@@ -27,6 +27,14 @@
 		CDC780582BC1879A0095B120 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780572BC1879A0095B120 /* APIClientTests.swift */; };
 		CDC7805A2BC1F0590095B120 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780592BC1F0590095B120 /* UserListView.swift */; };
 		CDC7805C2BC1F1AA0095B120 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7805B2BC1F1AA0095B120 /* UserViewModelTests.swift */; };
+		CDC7805E2BC2B8B30095B120 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7805D2BC2B8B30095B120 /* MessageListView.swift */; };
+		CDC780602BC2B8CB0095B120 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7805F2BC2B8CB0095B120 /* UserAvatarView.swift */; };
+		CDC780622BC2B8F90095B120 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780612BC2B8F90095B120 /* PrimaryButtonStyle.swift */; };
+		CDC780642BC2B9440095B120 /* Colorextensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780632BC2B9440095B120 /* Colorextensions.swift */; };
+		CDC780662BC2B9BB0095B120 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780652BC2B9BB0095B120 /* NetworkMonitor.swift */; };
+		CDC780692BC2B9DA0095B120 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC780682BC2B9DA0095B120 /* Logger.swift */; };
+		CDC7806B2BC2C1010095B120 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7806A2BC2C1010095B120 /* LoginView.swift */; };
+		CDC7806D2BC2C1170095B120 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7806C2BC2C1170095B120 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +78,14 @@
 		CDC780572BC1879A0095B120 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		CDC780592BC1F0590095B120 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		CDC7805B2BC1F1AA0095B120 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
+		CDC7805D2BC2B8B30095B120 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		CDC7805F2BC2B8CB0095B120 /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		CDC780612BC2B8F90095B120 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		CDC780632BC2B9440095B120 /* Colorextensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colorextensions.swift; sourceTree = "<group>"; };
+		CDC780652BC2B9BB0095B120 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		CDC780682BC2B9DA0095B120 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		CDC7806A2BC2C1010095B120 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CDC7806C2BC2C1170095B120 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CDC7803D2BC17D9B0095B120 /* Networking */,
+				CDC780672BC2B9C20095B120 /* Utilities */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,9 +205,12 @@
 		CDC780402BC17DFD0095B120 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDC7805D2BC2B8B30095B120 /* MessageListView.swift */,
 				CDC780592BC1F0590095B120 /* UserListView.swift */,
+				CDC7806A2BC2C1010095B120 /* LoginView.swift */,
 				CDC780442BC17E3D0095B120 /* ChatView.swift */,
 				CDC7804A2BC17F8E0095B120 /* Components */,
+				CDC7805F2BC2B8CB0095B120 /* UserAvatarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +220,7 @@
 			children = (
 				CDC780412BC17E160095B120 /* ChatViewModel.swift */,
 				CDC780532BC181A50095B120 /* UserViewModel.swift */,
+				CDC7806C2BC2C1170095B120 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -210,6 +231,7 @@
 				CDC780482BC17F880095B120 /* MessageBubble.swift */,
 				CDC7804B2BC17F9E0095B120 /* TextInputField.swift */,
 				CDC780122BC17B380095B120 /* Assets.xcassets */,
+				CDC780612BC2B8F90095B120 /* PrimaryButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CDC7804F2BC17FC00095B120 /* StringExtensions.swift */,
+				CDC780632BC2B9440095B120 /* Colorextensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +251,15 @@
 				CDC780512BC17FC60095B120 /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CDC780672BC2B9C20095B120 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CDC780652BC2B9BB0095B120 /* NetworkMonitor.swift */,
+				CDC780682BC2B9DA0095B120 /* Logger.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,19 +392,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC780692BC2B9DA0095B120 /* Logger.swift in Sources */,
 				CDC780392BC17D6C0095B120 /* Message.swift in Sources */,
 				CDC780542BC181A50095B120 /* UserViewModel.swift in Sources */,
 				CDC7800F2BC17B360095B120 /* ChatCompanionApp.swift in Sources */,
 				CDC780422BC17E160095B120 /* ChatViewModel.swift in Sources */,
+				CDC780642BC2B9440095B120 /* Colorextensions.swift in Sources */,
+				CDC780622BC2B8F90095B120 /* PrimaryButtonStyle.swift in Sources */,
 				CDC7804C2BC17F9E0095B120 /* TextInputField.swift in Sources */,
+				CDC780662BC2B9BB0095B120 /* NetworkMonitor.swift in Sources */,
 				CDC7804E2BC17FAF0095B120 /* APIEndpoints.swift in Sources */,
 				CDC780502BC17FC00095B120 /* StringExtensions.swift in Sources */,
+				CDC780602BC2B8CB0095B120 /* UserAvatarView.swift in Sources */,
 				CDC780562BC187090095B120 /* URLSessionProtocol.swift in Sources */,
+				CDC7805E2BC2B8B30095B120 /* MessageListView.swift in Sources */,
 				CDC780452BC17E3D0095B120 /* ChatView.swift in Sources */,
 				CDC7803C2BC17D8C0095B120 /* APIClient.swift in Sources */,
 				CDC780472BC17F780095B120 /* User.swift in Sources */,
 				CDC780492BC17F880095B120 /* MessageBubble.swift in Sources */,
+				CDC7806B2BC2C1010095B120 /* LoginView.swift in Sources */,
 				CDC7805A2BC1F0590095B120 /* UserListView.swift in Sources */,
+				CDC7806D2BC2C1170095B120 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
