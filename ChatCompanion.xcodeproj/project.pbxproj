@@ -159,6 +159,7 @@
 				CDC7803A2BC17D7E0095B120 /* Models */,
 				CDC7803E2BC17DA30095B120 /* Services */,
 				CDC780522BC17FCD0095B120 /* Helpers */,
+				C411334B2BC5EAC8008B16A0 /* Preview Support */,
 			);
 			path = ChatCompanion;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				CDC780512BC17FC60095B120 /* Extensions */,
-				C411334B2BC5EAC8008B16A0 /* Preview Support */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
