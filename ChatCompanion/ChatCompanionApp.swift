@@ -18,10 +18,11 @@ struct ChatCompanionApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if viewModel.isAuthenticated {
-                ChatView(viewModel: ChatViewModel())
+            if viewModel.isAuthenticated, let currentUser = viewModel.currentUser {
+                ChatView(viewModel: ChatViewModel(currentUser: currentUser))
             } else {
                 LoginView(viewModel: LoginViewModel())
+                    .environmentObject(viewModel)
             }
         }
     }

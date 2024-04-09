@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject var userViewModel: UserViewModel
     @ObservedObject var viewModel: LoginViewModel
-
+    
     var body: some View {
         VStack {
             TextField("Username", text: $viewModel.username)
@@ -33,5 +35,14 @@ struct LoginView: View {
             .padding()
         }
         .padding()
+        .onChange(of: viewModel.isAuthenticated, { oldValue, newValue in
+            userViewModel.isAuthenticated = newValue
+        })
+        
     }
+}
+
+#Preview {
+    LoginView(viewModel: MockLoginViewModel())
+        .environmentObject(UserViewModel(apiClient: MockAPIClient()))
 }

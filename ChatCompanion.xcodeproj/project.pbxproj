@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C411334D2BC5EAFE008B16A0 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C411334C2BC5EAFD008B16A0 /* MockAPIClient.swift */; };
+		C411334F2BC5EB19008B16A0 /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C411334E2BC5EB19008B16A0 /* MockChatViewModel.swift */; };
+		C41133512BC5EB35008B16A0 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41133502BC5EB35008B16A0 /* MockLoginViewModel.swift */; };
 		CDC7800F2BC17B360095B120 /* ChatCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */; };
 		CDC780132BC17B380095B120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780122BC17B380095B120 /* Assets.xcassets */; };
 		CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780152BC17B380095B120 /* Preview Assets.xcassets */; };
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C411334C2BC5EAFD008B16A0 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockAPIClient.swift; path = ../../../../MockAPIClient.swift; sourceTree = "<group>"; };
+		C411334E2BC5EB19008B16A0 /* MockChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockChatViewModel.swift; path = ../../../../MockChatViewModel.swift; sourceTree = "<group>"; };
+		C41133502BC5EB35008B16A0 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockLoginViewModel.swift; path = ../../../../MockLoginViewModel.swift; sourceTree = "<group>"; };
 		CDC7800B2BC17B360095B120 /* ChatCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompanionApp.swift; sourceTree = "<group>"; };
 		CDC780122BC17B380095B120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C411334B2BC5EAC8008B16A0 /* Preview Support */ = {
+			isa = PBXGroup;
+			children = (
+				C411334C2BC5EAFD008B16A0 /* MockAPIClient.swift */,
+				C411334E2BC5EB19008B16A0 /* MockChatViewModel.swift */,
+				C41133502BC5EB35008B16A0 /* MockLoginViewModel.swift */,
+			);
+			path = "Preview Support";
+			sourceTree = "<group>";
+		};
 		CDC780022BC17B360095B120 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +159,7 @@
 				CDC7803A2BC17D7E0095B120 /* Models */,
 				CDC7803E2BC17DA30095B120 /* Services */,
 				CDC780522BC17FCD0095B120 /* Helpers */,
+				C411334B2BC5EAC8008B16A0 /* Preview Support */,
 			);
 			path = ChatCompanion;
 			sourceTree = "<group>";
@@ -399,8 +416,10 @@
 				CDC780422BC17E160095B120 /* ChatViewModel.swift in Sources */,
 				CDC780642BC2B9440095B120 /* Colorextensions.swift in Sources */,
 				CDC780622BC2B8F90095B120 /* PrimaryButtonStyle.swift in Sources */,
+				C411334F2BC5EB19008B16A0 /* MockChatViewModel.swift in Sources */,
 				CDC7804C2BC17F9E0095B120 /* TextInputField.swift in Sources */,
 				CDC780662BC2B9BB0095B120 /* NetworkMonitor.swift in Sources */,
+				C41133512BC5EB35008B16A0 /* MockLoginViewModel.swift in Sources */,
 				CDC7804E2BC17FAF0095B120 /* APIEndpoints.swift in Sources */,
 				CDC780502BC17FC00095B120 /* StringExtensions.swift in Sources */,
 				CDC780602BC2B8CB0095B120 /* UserAvatarView.swift in Sources */,
@@ -409,6 +428,7 @@
 				CDC780452BC17E3D0095B120 /* ChatView.swift in Sources */,
 				CDC7803C2BC17D8C0095B120 /* APIClient.swift in Sources */,
 				CDC780472BC17F780095B120 /* User.swift in Sources */,
+				C411334D2BC5EAFE008B16A0 /* MockAPIClient.swift in Sources */,
 				CDC780492BC17F880095B120 /* MessageBubble.swift in Sources */,
 				CDC7806B2BC2C1010095B120 /* LoginView.swift in Sources */,
 				CDC7805A2BC1F0590095B120 /* UserListView.swift in Sources */,

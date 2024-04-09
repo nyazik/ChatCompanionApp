@@ -18,7 +18,7 @@ class UserViewModel: ObservableObject {
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
     }
-
+    
     func fetchCurrentUser() {
         apiClient.fetchCurrentUser { [weak self] result in
             DispatchQueue.main.async {
