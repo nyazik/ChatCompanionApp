@@ -6,9 +6,21 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
+}
 
 @main
 struct ChatCompanionApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     @StateObject var viewModel = UserViewModel()
     let networkMonitor = NetworkMonitor()
     
@@ -18,12 +30,15 @@ struct ChatCompanionApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if viewModel.isAuthenticated, let currentUser = viewModel.currentUser {
-                ChatView(viewModel: ChatViewModel(currentUser: currentUser))
-            } else {
-                LoginView(viewModel: LoginViewModel())
-                    .environmentObject(viewModel)
+            NavigationView {
+                if viewModel.isAuthenticated, let currentUser = viewModel.currentUser {
+                    ChatView(viewModel: ChatViewModel(currentUser: currentUser))
+                } else {
+                    LoginView(viewModel: LoginViewModel())
+                        .environmentObject(viewModel)
+                }
             }
         }
+        
     }
 }

@@ -10,6 +10,9 @@
 		C49C87D32BC5EFBF0074CD58 /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */; };
 		C49C87D42BC5EFBF0074CD58 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */; };
 		C49C87D52BC5EFBF0074CD58 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */; };
+		C49C88132BC738C40074CD58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C49C88122BC738C40074CD58 /* GoogleService-Info.plist */; };
+		C49C884B2BC7494D0074CD58 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C49C884A2BC7494D0074CD58 /* FirebaseAnalytics */; };
+		C49C884D2BC7494D0074CD58 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C49C884C2BC7494D0074CD58 /* FirebaseAnalyticsSwift */; };
 		CDC7800F2BC17B360095B120 /* ChatCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */; };
 		CDC780132BC17B380095B120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780122BC17B380095B120 /* Assets.xcassets */; };
 		CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780152BC17B380095B120 /* Preview Assets.xcassets */; };
@@ -61,6 +64,7 @@
 		C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockChatViewModel.swift; sourceTree = "<group>"; };
 		C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
+		C49C88122BC738C40074CD58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDC7800B2BC17B360095B120 /* ChatCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompanionApp.swift; sourceTree = "<group>"; };
 		CDC780122BC17B380095B120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49C884D2BC7494D0074CD58 /* FirebaseAnalyticsSwift in Frameworks */,
+				C49C884B2BC7494D0074CD58 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +135,13 @@
 			path = "Preview Support";
 			sourceTree = "<group>";
 		};
+		C49C88152BC73DDD0074CD58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDC780022BC17B360095B120 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +149,7 @@
 				CDC7801E2BC17B380095B120 /* ChatCompanionTests */,
 				CDC780282BC17B380095B120 /* ChatCompanionUITests */,
 				CDC7800C2BC17B360095B120 /* Products */,
+				C49C88152BC73DDD0074CD58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +166,7 @@
 		CDC7800D2BC17B360095B120 /* ChatCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				C49C88122BC738C40074CD58 /* GoogleService-Info.plist */,
 				CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */,
 				CDC780432BC17E270095B120 /* ViewModels */,
 				CDC780402BC17DFD0095B120 /* Views */,
@@ -295,6 +310,10 @@
 			dependencies = (
 			);
 			name = ChatCompanion;
+			packageProductDependencies = (
+				C49C884A2BC7494D0074CD58 /* FirebaseAnalytics */,
+				C49C884C2BC7494D0074CD58 /* FirebaseAnalyticsSwift */,
+			);
 			productName = ChatCompanion;
 			productReference = CDC7800B2BC17B360095B120 /* ChatCompanion.app */;
 			productType = "com.apple.product-type.application";
@@ -367,6 +386,9 @@
 				Base,
 			);
 			mainGroup = CDC780022BC17B360095B120;
+			packageReferences = (
+				C49C88142BC73DA10074CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CDC7800C2BC17B360095B120 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,6 +407,7 @@
 			files = (
 				CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */,
 				CDC780132BC17B380095B120 /* Assets.xcassets in Resources */,
+				C49C88132BC738C40074CD58 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatCompanion/Preview Content\"";
-				DEVELOPMENT_TEAM = ATA7F7226K;
+				DEVELOPMENT_TEAM = 3777CH98HC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -606,11 +629,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -627,7 +652,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatCompanion/Preview Content\"";
-				DEVELOPMENT_TEAM = ATA7F7226K;
+				DEVELOPMENT_TEAM = 3777CH98HC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -635,11 +660,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -764,6 +791,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C49C88142BC73DA10074CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C49C884A2BC7494D0074CD58 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C49C88142BC73DA10074CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C49C884C2BC7494D0074CD58 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C49C88142BC73DA10074CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDC780032BC17B360095B120 /* Project object */;
 }

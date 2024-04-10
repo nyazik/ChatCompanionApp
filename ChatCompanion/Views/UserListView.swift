@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 
 struct UserListView: View {
@@ -26,6 +27,7 @@ struct UserListView: View {
         .onAppear {
             viewModel.fetchUsers()
         }
+        .analyticsScreen(name: "\(UserListView.self)")
     }
 }
 

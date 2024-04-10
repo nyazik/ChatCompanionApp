@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct LoginView: View {
     
@@ -33,11 +34,15 @@ struct LoginView: View {
                     .cornerRadius(10)
             }
             .padding()
+            
         }
         .padding()
+        .analyticsScreen(name: "\(LoginView.self)")
+        
         .onChange(of: viewModel.isAuthenticated, { oldValue, newValue in
             userViewModel.isAuthenticated = newValue
         })
+    
         
     }
 }

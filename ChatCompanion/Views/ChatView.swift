@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct ChatView: View {
     @ObservedObject var viewModel: ChatViewModel
@@ -25,6 +26,7 @@ struct ChatView: View {
         .onAppear(perform: {
             viewModel.fetchMessages()
         })
+        .analyticsScreen(name: "\(ChatView.self)")
     }
 }
 
