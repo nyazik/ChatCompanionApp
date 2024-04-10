@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+
 struct UserListView: View {
     @ObservedObject var viewModel: UserViewModel
-
+    
     var body: some View {
         List(viewModel.users) { user in
             HStack {
@@ -26,4 +27,9 @@ struct UserListView: View {
             viewModel.fetchUsers()
         }
     }
+}
+
+
+#Preview {
+    UserListView(viewModel: UserViewModel(apiClient: MockAPIClient()))
 }
