@@ -11,19 +11,26 @@ import XCTest
 class ChatViewModelTests: XCTestCase {
     var viewModel: ChatViewModel!
     var apiClientMock: APIClientMock!
-
+    
+    let currentUser: User = User(id: "1", name: "Nazik", avatarURL: "https://yourapi.domain.com/images/nazik")
+    
     override func setUp() {
         super.setUp()
         apiClientMock = APIClientMock()
-        viewModel = ChatViewModel(apiClient: apiClientMock)
+        viewModel = ChatViewModel(apiClient: apiClientMock, currentUser: currentUser)
     }
-
+    
     override func tearDown() {
         viewModel = nil
         apiClientMock = nil
         super.tearDown()
     }
-
+    
+    func testCheckCurrentUser() throws {
+        XCTAssertNotNil(viewModel.currentUser, "Current user from viewModel is nil")
+        XCTAssertEqual(viewModel.currentUser, currentUser, "Current user from viewModel is not the same")
+    }
+    
     func testFetchMessagesSuccess() throws {
         let expectation = XCTestExpectation(description: "fetchMessages")
         
@@ -40,15 +47,15 @@ class ChatViewModelTests: XCTestCase {
     
     func testFetchMessagesFailure() {
         apiClientMock.shouldReturnError = true
-
+        
         viewModel.fetchMessages()
-
+        
         let expectation = XCTestExpectation(description: "fetchMessagesFailure")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1.0)
-
+        
         XCTAssertTrue(self.viewModel.messages.isEmpty, "Messages array should be empty after a fetch failure.")
     }
     
@@ -57,7 +64,7 @@ class ChatViewModelTests: XCTestCase {
         let initialMessageCount = viewModel.messages.count
         viewModel.newMessageText = "Test Message"
         apiClientMock.sendMessageSuccess = true // Ensure mock is set for success
-
+        
         // Expectation
         let expectation = XCTestExpectation(description: "sendMessageSuccess")
         
@@ -124,12 +131,12 @@ class APIClientMock: APIClient {
     }
     
     override func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
-            if shouldReturnError {
-                completion(.failure(NSError(domain: "API Error", code: 400, userInfo: nil)))
-            } else {
-                completion(.success(mockUsers))
-            }
+        if shouldReturnError {
+            completion(.failure(NSError(domain: "API Error", code: 400, userInfo: nil)))
+        } else {
+            completion(.success(mockUsers))
         }
+    }
 }
 
 class MockURLSession: URLSessionProtocol {
@@ -137,7 +144,7 @@ class MockURLSession: URLSessionProtocol {
     var nextData: Data?
     var nextError: Error?
     var nextResponse: URLResponse?
-
+    
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         completionHandler(nextData, nextResponse, nextError)
         return nextDataTask

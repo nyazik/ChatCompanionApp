@@ -11,12 +11,13 @@ import Combine
 class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
     private var apiClient: APIClient
-    @Published var currentUser: User?
+    let currentUser: User
     private var cancellables = Set<AnyCancellable>()
     @Published var newMessageText: String = ""
     
-    init(apiClient: APIClient = APIClient()) {
+    init(apiClient: APIClient = APIClient(), currentUser: User) {
         self.apiClient = apiClient
+        self.currentUser = currentUser
     }
     
     func fetchMessages() {
@@ -33,7 +34,7 @@ class ChatViewModel: ObservableObject {
     }
     
     func sendMessage() {
-        let newMessage = Message(id: UUID().uuidString, text: newMessageText, userId: currentUser?.id ?? "unknown", timestamp: Date())
+        let newMessage = Message(id: UUID().uuidString, text: newMessageText, userId: currentUser.id, timestamp: Date())
         
         apiClient.sendMessage(newMessage) { [weak self] result in
             DispatchQueue.main.async {

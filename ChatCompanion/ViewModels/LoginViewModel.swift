@@ -15,16 +15,16 @@ class LoginViewModel: ObservableObject {
     @Published var loginError: String? = nil
     private var apiClient: APIClient
     private var cancellables = Set<AnyCancellable>()
-
+    
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
     }
-
+    
     func login() {
         apiClient.login(username: username, password: password) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let user):
+                case .success:
                     self?.isAuthenticated = true
                     self?.loginError = nil
                 case .failure(let error):
