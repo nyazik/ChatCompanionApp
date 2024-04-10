@@ -10,6 +10,7 @@
 		C49C87D32BC5EFBF0074CD58 /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */; };
 		C49C87D42BC5EFBF0074CD58 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */; };
 		C49C87D52BC5EFBF0074CD58 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */; };
+		CDA68DC62BC73BD400DD83A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */; };
 		CDC7800F2BC17B360095B120 /* ChatCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */; };
 		CDC780132BC17B380095B120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780122BC17B380095B120 /* Assets.xcassets */; };
 		CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC780152BC17B380095B120 /* Preview Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockChatViewModel.swift; sourceTree = "<group>"; };
 		C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
+		CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDC7800B2BC17B360095B120 /* ChatCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompanionApp.swift; sourceTree = "<group>"; };
 		CDC780122BC17B380095B120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		CDC7800D2BC17B360095B120 /* ChatCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */,
 				CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */,
 				CDC780432BC17E270095B120 /* ViewModels */,
 				CDC780402BC17DFD0095B120 /* Views */,
@@ -385,6 +388,7 @@
 			files = (
 				CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */,
 				CDC780132BC17B380095B120 /* Assets.xcassets in Resources */,
+				CDA68DC62BC73BD400DD83A7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
