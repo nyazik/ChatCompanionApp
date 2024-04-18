@@ -28,4 +28,8 @@ struct APIEndpoints {
     static var login: URL {
         return URL(string: "\(baseURL)login")!
     }
+    
+    static var register: URL {
+        return URL(string: "\(baseURL)register")!
+    }
 }

@@ -13,11 +13,15 @@ class LoginViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var isAuthenticated: Bool = false
     @Published var loginError: String? = nil
+    @Published var isFormValid: Bool = false
     private var apiClient: APIClient
     private var cancellables = Set<AnyCancellable>()
-    
+
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
+        areCredentialsValidPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: &$isFormValid)
     }
     
     func login() {
@@ -33,5 +37,27 @@ class LoginViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    private var isUsernameValidPublisher: AnyPublisher<Bool, Never> {
+        $username
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { $0.count >= 3 }
+            .eraseToAnyPublisher()
+    }
+
+    private var isPasswordValidPublisher: AnyPublisher<Bool, Never> {
+        $password
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { $0.count >= 6 }
+            .eraseToAnyPublisher()
+    }
+
+    private var areCredentialsValidPublisher: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest(isUsernameValidPublisher, isPasswordValidPublisher)
+            .map { $0 && $1 }
+            .eraseToAnyPublisher()
     }
 }

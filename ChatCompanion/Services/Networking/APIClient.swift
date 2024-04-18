@@ -97,6 +97,24 @@ class APIClient {
         
         performRequest(with: request, completion: completion)
     }
+    
+    func register(username: String, email: String, password: String, completion: @escaping (Result<GenericAPIResponse, Error>) -> Void) {
+        var request = URLRequest(url: APIEndpoints.register)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let registrationDetails = ["username": username, "email": email, "password": password]
+
+        do {
+            let registrationData = try JSONEncoder().encode(registrationDetails)
+            request.httpBody = registrationData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+
+        performRequest(with: request, completion: completion)
+    }
 }
 
 
