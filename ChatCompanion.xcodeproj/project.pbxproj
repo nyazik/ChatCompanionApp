@@ -10,7 +10,6 @@
 		C49C87D32BC5EFBF0074CD58 /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */; };
 		C49C87D42BC5EFBF0074CD58 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */; };
 		C49C87D52BC5EFBF0074CD58 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */; };
-		CDA68DC62BC73BD400DD83A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */; };
 		CDA68DC82BC9D09700DD83A7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA68DC72BC9D09600DD83A7 /* RegistrationViewModel.swift */; };
 		CDA68DCA2BC9D0D900DD83A7 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA68DC92BC9D0D900DD83A7 /* RegistrationView.swift */; };
 		CDA68DCC2BC9D2F100DD83A7 /* RegistrationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA68DCB2BC9D2F100DD83A7 /* RegistrationViewModelTests.swift */; };
@@ -65,7 +64,6 @@
 		C49C87D02BC5EFBF0074CD58 /* MockChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockChatViewModel.swift; sourceTree = "<group>"; };
 		C49C87D12BC5EFBF0074CD58 /* MockAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		C49C87D22BC5EFBF0074CD58 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
-		CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDA68DC72BC9D09600DD83A7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CDA68DC92BC9D0D900DD83A7 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		CDA68DCB2BC9D2F100DD83A7 /* RegistrationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelTests.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 		CDC7800D2BC17B360095B120 /* ChatCompanion */ = {
 			isa = PBXGroup;
 			children = (
-				CDA68DC52BC73BD400DD83A7 /* GoogleService-Info.plist */,
 				CDC7800E2BC17B360095B120 /* ChatCompanionApp.swift */,
 				CDC780432BC17E270095B120 /* ViewModels */,
 				CDC780402BC17DFD0095B120 /* Views */,
@@ -397,7 +394,6 @@
 			files = (
 				CDC780162BC17B380095B120 /* Preview Assets.xcassets in Resources */,
 				CDC780132BC17B380095B120 /* Assets.xcassets in Resources */,
-				CDA68DC62BC73BD400DD83A7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,7 +623,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -656,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -675,7 +671,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanionTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanionUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -695,7 +691,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanionTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanionUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -713,7 +709,7 @@
 				DEVELOPMENT_TEAM = ATA7F7226K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanionUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -731,7 +727,7 @@
 				DEVELOPMENT_TEAM = ATA7F7226K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanion.ChatCompanionUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AheadVision.ChatCompanionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
